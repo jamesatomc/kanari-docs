@@ -2,6 +2,11 @@ import React from 'react'
 import { DocsThemeConfig } from 'nextra-theme-docs'
 
 const config: DocsThemeConfig = {
+  useNextSeoProps() {
+    return {
+      titleTemplate: '%s | Kanari Network Docs',
+    }
+  },
   banner: {
     key: '2.0-release',
     text: (
@@ -28,9 +33,17 @@ const config: DocsThemeConfig = {
   footer: {
     text: 'MIT 2021 © Kanari Network',
   },
-  useNextSeoProps() {
-    return {
-      titleTemplate: '%s | Kanari Network Docs',
+  sidebar: {
+    titleComponent({ title, type }) {
+      if (type === 'separator') {
+        return (
+          <div style={{ background: 'cyan', textAlign: 'center' }}>{title}</div>
+        )
+      }
+      if (title === 'About') {
+        return <>❓ {title}</>
+      }
+      return <>👉 {title}</>
     }
   }
 }
