@@ -17,7 +17,7 @@ const config: DocsThemeConfig = {
   },
   logo: (
     <>
-      <img src="./icon.png" alt="Kanari Network Logo" style={{ width: '40px', height: '40px' }}/>
+      <img src="./icon.png" alt="Kanari Network Logo" style={{ width: '40px', height: '40px' }} />
       <span style={{ marginLeft: '10px', fontSize: '1.2em', fontWeight: 500 }}>
         Kanari Network Docs
       </span>
@@ -31,7 +31,15 @@ const config: DocsThemeConfig = {
   },
   docsRepositoryBase: 'https://github.com/kanari-network/',
   footer: {
-    text: 'MIT 2021 © Kanari Network',
+    text: (
+      <span className="text-sm text-white sm:text-center dark:text-gray-400">
+        © 2024{' '}
+        <a href="#" className="hover:underline">
+          Kanari Network™
+        </a>
+        . All Rights Reserved.
+      </span>
+    )
   },
   sidebar: {
     titleComponent({ title, type }) {
