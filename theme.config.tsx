@@ -2,17 +2,37 @@ import React from 'react'
 import { DocsThemeConfig } from 'nextra-theme-docs'
 
 const config: DocsThemeConfig = {
-  logo: <span>My Project</span>,
+  banner: {
+    key: '2.0-release',
+    text: (
+      <a href="https://kanari.network" target="_blank">
+        🎉 https://kanari.network →
+      </a>
+    )
+  },
+  logo: (
+    <>
+      <img src="./icon.png" alt="Kanari Network Logo" style={{ width: '40px', height: '40px' }}/>
+      <span style={{ marginLeft: '10px', fontSize: '1.2em', fontWeight: 500 }}>
+        Kanari Network Docs
+      </span>
+    </>
+  ),
   project: {
-    link: 'https://github.com/shuding/nextra-docs-template',
+    link: 'https://github.com/kanari-network/',
   },
   chat: {
-    link: 'https://discord.com',
+    link: 'https://discord.gg/RKzUr4fK',
   },
-  docsRepositoryBase: 'https://github.com/shuding/nextra-docs-template',
+  docsRepositoryBase: 'https://github.com/kanari-network/',
   footer: {
-    text: 'Nextra Docs Template',
+    text: 'MIT 2021 © Kanari Network',
   },
+  useNextSeoProps() {
+    return {
+      titleTemplate: '%s | Kanari Network Docs',
+    }
+  }
 }
 
 export default config
