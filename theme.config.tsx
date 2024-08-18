@@ -34,7 +34,7 @@ const config: DocsThemeConfig = {
     text: (
       <span className="text-sm text-white sm:text-center dark:text-gray-400">
         © 2024{' '}
-        <a href="#" className="hover:underline">
+        <a href="https://kanari.network" className="hover:underline">
           Kanari Network™
         </a>
         . All Rights Reserved.
