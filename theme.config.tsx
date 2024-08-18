@@ -24,12 +24,12 @@ const config: DocsThemeConfig = {
     </>
   ),
   project: {
-    link: 'https://github.com/kanari-network/',
+    link: 'https://github.com/jamesatomc/kanari-docs/',
   },
   chat: {
     link: 'https://discord.gg/RKzUr4fK',
   },
-  docsRepositoryBase: 'https://github.com/kanari-network/',
+  docsRepositoryBase: 'https://github.com/jamesatomc/kanari-docs/',
   footer: {
     text: (
       <span className="text-sm text-white sm:text-center dark:text-gray-400">
