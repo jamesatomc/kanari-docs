@@ -30,6 +30,8 @@ const config: DocsThemeConfig = {
     link: 'https://discord.gg/RKzUr4fK',
   },
   docsRepositoryBase: 'https://github.com/kanari-network/',
+
+  // Custom footer
   footer: {
     text: (
       <span className="text-sm text-white sm:text-center dark:text-gray-400">
@@ -41,6 +43,8 @@ const config: DocsThemeConfig = {
       </span>
     )
   },
+
+  // Custom sidebar component
   sidebar: {
     titleComponent({ title, type }) {
       if (type === 'separator') {
