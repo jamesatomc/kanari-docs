@@ -39,6 +39,17 @@ To compile kanari on Windows, you'll need to install the following dependencies:
 1. Download the Rust installer from the [official Rust website](https://www.rust-lang.org/tools/install).
 2. Run the installer and follow the on-screen instructions.
 3. After installation, open a new Command Prompt or PowerShell window and verify the installation by running:
-    ```powershell
-    rustc --version
-    ```
+
+```powershell
+rustc --version
+```
+#### Clone the repository
+```powershell
+git clone https://github.com/kanari-network/kanari-sdk.git
+```
+#### Compile and install Kari
+```powershell
+cd kanari-sdk
+cargo build --release
+cp target/release/kari ~/.cargo/bin
+```

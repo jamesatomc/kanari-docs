@@ -17,7 +17,7 @@ const config: DocsThemeConfig = {
   },
   logo: (
     <>
-      <img src="./icon.png" alt="Kanari Network Logo" style={{ width: '40px', height: '40px' }} />
+      <img src="../icon.png" alt="Kanari Network Logo" style={{ width: '40px', height: '40px' }} />
       <span style={{ marginLeft: '10px', fontSize: '1.2em', fontWeight: 500 }}>
         Kanari Network Docs
       </span>
@@ -55,7 +55,7 @@ const config: DocsThemeConfig = {
       if (title === 'About') {
         return <>❓ {title}</>
       }
-      return <>👉 {title}</>
+      return <> {title}</>
     }
   }
 }
