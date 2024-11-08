@@ -4,22 +4,41 @@ Before you begin, ensure you have the following installed on your machine:
 
 - Rust: The programming language used to build the Kanari Network. You can install Rust by following the instructions on the [official Rust website](https://www.rust-lang.org/tools/install).
 
-## Installation Steps
+## Compile and install
 
-1. **Install Rust**
+### Ubuntu 
 
-   Open your terminal and run the following command to install Rust:
+#### Install dependencies
+```bash
+sudo apt  install git curl cmake make gcc lld pkg-config libssl-dev libclang-dev libsqlite3-dev g++ protobuf-compiler
+```
+#### Install Rust
+```bash 
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+```
+#### Clone the repository
+```bash
+git clone git clone https://github.com/kanari-network/kanari-sdk.git
+```
+#### Compile and install Kari
+```bash
+cd kanari-sdk && cargo build --release && cp target/release/kari ~/.cargo/bin
+```
 
-   ```sh
-   curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
-   ```
 
-2. **Verify Installation**
+### Windows
 
-    After the installation is complete, verify that Rust is installed correctly by running:
+#### Install dependencies
+To compile kanari on Windows, you'll need to install the following dependencies:
 
-    ```sh
+1. [Build Tools for Visual Studio 2022](https://visualstudio.microsoft.com/visual-cpp-build-tools/)
+2. [LLVM](https://releases.llvm.org/download.html)
+3. [Git](https://git-scm.com/download/win)
+
+#### Install Rust
+1. Download the Rust installer from the [official Rust website](https://www.rust-lang.org/tools/install).
+2. Run the installer and follow the on-screen instructions.
+3. After installation, open a new Command Prompt or PowerShell window and verify the installation by running:
+    ```powershell
     rustc --version
     ```
-
-
