@@ -24,10 +24,10 @@ const config: DocsThemeConfig = {
     </>
   ),
   project: {
-    link: 'https://github.com//kanari-docs/',
+    link: 'https://github.com/jamesatomc/kanari-docs/',
   },
   chat: {
-    link: 'https://discord.gg/RKzUr4fK',
+    link: 'https://discord.gg/HrPXcfEa9r',
   },
   docsRepositoryBase: 'https://github.com/jamesatomc/kanari-docs/tree/main',
 
