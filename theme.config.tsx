@@ -5,16 +5,23 @@ const config: DocsThemeConfig = {
   useNextSeoProps() {
     return {
       titleTemplate: '%s | Kanari Network Docs',
+      additionalLinkTags: [
+        {
+          rel: 'icon',
+          href: '../icon.png',
+        },
+      ],
     }
+
   },
-  banner: {
-    key: '2.0-release',
-    text: (
-      <a href="https://kanari.network" target="_blank">
-        🎉 https://kanari.network →
-      </a>
-    )
-  },
+  // banner: {
+  //   key: '2.0-release',
+  //   text: (
+  //     <a href="https://kanari.network" target="_blank">
+  //       🎉 https://kanari.network →
+  //     </a>
+  //   )
+  // },
   logo: (
     <>
       <img src="../icon.png" alt="Kanari Network Logo" style={{ width: '40px', height: '40px' }} />
