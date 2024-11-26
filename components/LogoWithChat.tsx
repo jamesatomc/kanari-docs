@@ -2,10 +2,34 @@ import React, { useState } from 'react'
 import Modal from 'react-modal'
 import styles from './counters.module.css'
 
+interface Message {
+  id: number;
+  text: string;
+  timestamp: Date;
+}
+
 Modal.setAppElement('#__next')
 
 export const LogoWithChat = () => {
   const [modalIsOpen, setModalIsOpen] = useState(false)
+  const [messages, setMessages] = useState<Message[]>([])
+  const [inputText, setInputText] = useState('')
+
+  const handleSend = () => {
+    if (inputText.trim()) {
+      const newMessage: Message = {
+        id: Date.now(),
+        text: inputText,
+        timestamp: new Date()
+      }
+      setMessages([...messages, newMessage])
+      setInputText('')
+    }
+  }
+
+  const handleDelete = (id: number) => {
+    setMessages(messages.filter(msg => msg.id !== id))
+  }
 
   return (
     <div className={styles.container}>
@@ -45,16 +69,37 @@ export const LogoWithChat = () => {
 
         <div className={styles.chatContainer}>
           <div className={styles.messagesContainer}>
-            {/* Messages will be rendered here */}
+            {messages.map(message => (
+              <div key={message.id} className={styles.messageItem}>
+                <div className={styles.messageContent}>
+                  <p>{message.text}</p>
+                  <span className={styles.timestamp}>
+                    {message.timestamp.toLocaleTimeString()}
+                  </span>
+                </div>
+                <button 
+                  onClick={() => handleDelete(message.id)}
+                  className={styles.deleteButton}
+                >
+                  ✕
+                </button>
+              </div>
+            ))}
           </div>
           
           <div className={styles.inputContainer}>
             <input
               type="text"
+              value={inputText}
+              onChange={(e) => setInputText(e.target.value)}
+              onKeyPress={(e) => e.key === 'Enter' && handleSend()}
               placeholder="Type your message..."
               className={styles.input}
             />
-            <button className={styles.sendButton}>
+            <button 
+              onClick={handleSend}
+              className={styles.sendButton}
+            >
               Send
             </button>
           </div>
