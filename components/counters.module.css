@@ -7,71 +7,119 @@
 
 /* LogoWithChat.module.css */
 .modalOverlay {
-  @apply fixed inset-0 bg-black/50 dark:bg-black/70;
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 .modalContent {
-  @apply fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2
-         bg-white dark:bg-gray-800 
-         rounded-lg p-6 w-[90vw] max-w-2xl
-         dark:text-white;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  width: 90vw;
+  max-width: 42rem;
 }
 
 .closeButton {
-  @apply px-3 py-1 bg-gray-200 dark:bg-gray-700
-         rounded hover:bg-gray-300 dark:hover:bg-gray-600
-         dark:text-white;
+  padding: 0.75rem 1rem;
+  background-color: #e5e7eb;
+  border-radius: 0.375rem;
 }
 
 .input {
-  @apply w-full px-4 py-2 rounded-lg
-         bg-white dark:bg-gray-700
-         border border-gray-300 dark:border-gray-600
-         text-gray-900 dark:text-white
-         focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-400;
+  width: 100%;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  border: 1px solid #e5e7eb;
 }
 
 .sendButton {
-  @apply px-4 py-2 ml-2
-         bg-blue-500 dark:bg-blue-600
-         text-white rounded
-         hover:bg-blue-600 dark:hover:bg-blue-700;
+  padding: 0.5rem 1rem;
+  margin-left: 0.5rem;
+  background-color: #3b82f6;
+  color: white;
+  border-radius: 0.375rem;
 }
 
-/* Keep existing styles */
 .container {
-  @apply flex items-center gap-4;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
 }
 
 .logo {
-  @apply h-8 w-8;
+  height: 2rem;
+  width: 2rem;
 }
 
 .title {
-  @apply text-lg font-semibold dark:text-white;
+  font-size: 1.125rem;
+  font-weight: 600;
 }
 
 .chatButton {
-  @apply px-4 py-2 bg-blue-500 text-white rounded 
-         hover:bg-blue-600 dark:bg-blue-600 dark:hover:bg-blue-700;
+  padding: 0.5rem 1rem;
+  background-color: #3b82f6;
+  color: white;
+  border-radius: 0.375rem;
 }
 
 .header {
-  @apply flex justify-between items-center mb-4;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
 }
 
 .modalTitle {
-  @apply text-xl font-bold dark:text-white;
+  font-size: 1.25rem;
+  font-weight: 700;
 }
 
 .chatContainer {
-  @apply h-[60vh] flex flex-col;
+  height: 60vh;
+  display: flex;
+  flex-direction: column;
 }
 
 .messagesContainer {
-  @apply flex-1 overflow-y-auto;
+  flex: 1;
+  overflow-y: auto;
 }
 
 .inputContainer {
-  @apply flex items-center mt-4;
+  display: flex;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+/* Dark mode */
+@media (prefers-color-scheme: dark) {
+  .modalOverlay {
+    background-color: rgba(0, 0, 0, 0.7);
+  }
+
+  .modalContent {
+    background-color: #1f2937;
+    color: white;
+  }
+
+  .closeButton {
+    background-color: #374151;
+    color: white;
+  }
+
+  .input {
+    background-color: #374151;
+    border-color: #4b5563;
+    color: white;
+  }
+
+  .title, .modalTitle {
+    color: white;
+  }
 }
