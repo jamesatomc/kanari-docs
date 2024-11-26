@@ -39,17 +39,22 @@ const config: DocsThemeConfig = {
   docsRepositoryBase: 'https://github.com/jamesatomc/kanari-docs/tree/main',
 
   // Custom footer
+  // footer: {
+  //   text: (
+  //     <span className="text-sm text-white sm:text-center dark:text-gray-400">
+  //       © 2024{' '}
+  //       <a href="https://kanari.network" className="hover:underline">
+  //         Kanari Network™
+  //       </a>
+  //       . All Rights Reserved.
+  //     </span>
+  //   )
+  // },
   footer: {
-    text: (
-      <span className="text-sm text-white sm:text-center dark:text-gray-400">
-        © 2024{' '}
-        <a href="https://kanari.network" className="hover:underline">
-          Kanari Network™
-        </a>
-        . All Rights Reserved.
-      </span>
-    )
+    component: () => null,
+    text: () => null,
   },
+
 
   // Custom sidebar component
   sidebar: {
