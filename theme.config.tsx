@@ -17,14 +17,14 @@ const config: DocsThemeConfig = {
       ],
     }
   },
-  banner: {
-    key: '2.0-release',
-    text: (
-      <a href="https://kanari.network" target="_blank" style={{ color: '#fff', textDecoration: 'none' }}>
-        🎉 Check out the new features on Kanari Network →
-      </a>
-    )
-  },
+  // banner: {
+  //   key: '2.0-release',
+  //   text: (
+  //     <a href="https://kanari.network" target="_blank" style={{ color: '#fff', textDecoration: 'none' }}>
+  //       🎉 Check out the new features on Kanari Network →
+  //     </a>
+  //   )
+  // },
   logo: (
     <LogoWithChat />
   ),
