@@ -15,7 +15,7 @@ export const LogoWithChat = () => {
         className={styles.logo} 
       />
       <span className={styles.title}>
-        Kanari Network Docs
+        Kanari Docs
       </span>
       <button 
         onClick={() => setModalIsOpen(true)}
