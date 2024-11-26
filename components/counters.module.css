@@ -5,3 +5,73 @@
   margin: 12px 0 0;
 }
 
+/* LogoWithChat.module.css */
+.modalOverlay {
+  @apply fixed inset-0 bg-black/50 dark:bg-black/70;
+}
+
+.modalContent {
+  @apply fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2
+         bg-white dark:bg-gray-800 
+         rounded-lg p-6 w-[90vw] max-w-2xl
+         dark:text-white;
+}
+
+.closeButton {
+  @apply px-3 py-1 bg-gray-200 dark:bg-gray-700
+         rounded hover:bg-gray-300 dark:hover:bg-gray-600
+         dark:text-white;
+}
+
+.input {
+  @apply w-full px-4 py-2 rounded-lg
+         bg-white dark:bg-gray-700
+         border border-gray-300 dark:border-gray-600
+         text-gray-900 dark:text-white
+         focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-400;
+}
+
+.sendButton {
+  @apply px-4 py-2 ml-2
+         bg-blue-500 dark:bg-blue-600
+         text-white rounded
+         hover:bg-blue-600 dark:hover:bg-blue-700;
+}
+
+/* Keep existing styles */
+.container {
+  @apply flex items-center gap-4;
+}
+
+.logo {
+  @apply h-8 w-8;
+}
+
+.title {
+  @apply text-lg font-semibold dark:text-white;
+}
+
+.chatButton {
+  @apply px-4 py-2 bg-blue-500 text-white rounded 
+         hover:bg-blue-600 dark:bg-blue-600 dark:hover:bg-blue-700;
+}
+
+.header {
+  @apply flex justify-between items-center mb-4;
+}
+
+.modalTitle {
+  @apply text-xl font-bold dark:text-white;
+}
+
+.chatContainer {
+  @apply h-[60vh] flex flex-col;
+}
+
+.messagesContainer {
+  @apply flex-1 overflow-y-auto;
+}
+
+.inputContainer {
+  @apply flex items-center mt-4;
+}
