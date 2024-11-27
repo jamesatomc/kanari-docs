@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import Modal from 'react-modal'
 import styles from './styles/logoandchat.module.css'
 
-
 interface Message {
   id: number;
   text: string;
@@ -34,19 +33,23 @@ export const LogoWithChat = () => {
 
   return (
     <div className={styles.container}>
-      <img 
-        src="../icon.png" 
-        alt="Kanari Network Logo" 
-        className={styles.logo} 
-      />
-      <span className={styles.title}>
-        Kanari Docs
-      </span>
+      <div className={styles.logoContainer}>
+        <img 
+          src="../icon.png" 
+          alt="Kanari Network Logo" 
+          className={styles.logo} 
+        />
+        <span className={styles.title}>Kanari Docs</span>
+      </div>
+      
       <button 
         onClick={() => setModalIsOpen(true)}
         className={styles.chatButton}
       >
-        AI Chat
+        <svg className={styles.chatIcon} viewBox="0 0 24 24">
+          <path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/>
+        </svg>
+        Chat with AI
       </button>
 
       <Modal
@@ -56,34 +59,40 @@ export const LogoWithChat = () => {
         className={styles.modalContent}
         overlayClassName={styles.modalOverlay}
       >
-        <div className={styles.header}>
-          <h2 className={styles.modalTitle}>
-            AI Chat
-          </h2>
+        <div className={styles.chatHeader}>
+          <div className={styles.headerInfo}>
+            <svg className={styles.aiIcon} viewBox="0 0 24 24">
+              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/>
+            </svg>
+            <h2>AI Assistant</h2>
+          </div>
           <button 
             onClick={() => setModalIsOpen(false)}
             className={styles.closeButton}
           >
-            Close
+            <span>×</span>
           </button>
         </div>
 
         <div className={styles.chatContainer}>
           <div className={styles.messagesContainer}>
             {messages.map(message => (
-              <div key={message.id} className={styles.messageItem}>
-                <div className={styles.messageContent}>
-                  <p>{message.text}</p>
-                  <span className={styles.timestamp}>
-                    {message.timestamp.toLocaleTimeString()}
-                  </span>
+              <div key={message.id} className={styles.messageWrapper}>
+                <div className={styles.messageItem}>
+                  <div className={styles.messageContent}>
+                    <p>{message.text}</p>
+                    <span className={styles.timestamp}>
+                      {message.timestamp.toLocaleTimeString()}
+                    </span>
+                  </div>
+                  <button 
+                    onClick={() => handleDelete(message.id)}
+                    className={styles.deleteButton}
+                    aria-label="Delete message"
+                  >
+                    <span>×</span>
+                  </button>
                 </div>
-                <button 
-                  onClick={() => handleDelete(message.id)}
-                  className={styles.deleteButton}
-                >
-                  ✕
-                </button>
               </div>
             ))}
           </div>
@@ -100,8 +109,11 @@ export const LogoWithChat = () => {
             <button 
               onClick={handleSend}
               className={styles.sendButton}
+              disabled={!inputText.trim()}
             >
-              Send
+              <svg viewBox="0 0 24 24" className={styles.sendIcon}>
+                <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/>
+              </svg>
             </button>
           </div>
         </div>
