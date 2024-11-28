@@ -55,7 +55,7 @@ export const LogoWithChat = () => {
       <Modal
         isOpen={modalIsOpen}
         onRequestClose={() => setModalIsOpen(false)}
-        contentLabel="AI Chat"
+        // contentLabel="AI Chat"
         className={styles.modalContent}
         overlayClassName={styles.modalOverlay}
       >
