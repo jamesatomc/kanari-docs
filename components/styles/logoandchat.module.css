@@ -1,3 +1,40 @@
+:root {
+  --background-light: #fff;
+  --background-dark: #333;
+  --text-light: #333;
+  --text-dark: #ddd;
+  --border-light: #ddd;
+  --border-dark: #555;
+  --primary-light: #007AFF;
+  --primary-dark: #1E90FF;
+  --hover-light: #0056b3;
+  --hover-dark: #104E8B;
+  --overlay-light: rgba(0, 0, 0, 0.5);
+  --overlay-dark: rgba(255, 255, 255, 0.1);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: var(--background-dark);
+    --text: var(--text-dark);
+    --border: var(--border-dark);
+    --primary: var(--primary-dark);
+    --hover: var(--hover-dark);
+    --overlay: var(--overlay-dark);
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --background: var(--background-light);
+    --text: var(--text-light);
+    --border: var(--border-light);
+    --primary: var(--primary-light);
+    --hover: var(--hover-light);
+    --overlay: var(--overlay-light);
+  }
+}
+
 .container {
   display: flex;
   align-items: center;
@@ -20,7 +57,7 @@
 .title {
   font-size: 1.25rem;
   font-weight: 600;
-  color: #333;
+  color: var(--text);
 }
 
 .chatButton {
@@ -30,14 +67,14 @@
   padding: 0.5rem 1rem;
   border: none;
   border-radius: 20px;
-  background: #007AFF;
+  background: var(--primary);
   color: white;
   cursor: pointer;
   transition: all 0.2s;
 }
 
 .chatButton:hover {
-  background: #0056b3;
+  background: var(--hover);
 }
 
 .chatIcon {
@@ -52,7 +89,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.5);
+  background: var(--overlay);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -60,7 +97,7 @@
 }
 
 .modalContent {
-  background: white;
+  background: var(--background);
   border-radius: 12px;
   width: 90%;
   max-width: 500px;
@@ -75,7 +112,7 @@
   align-items: center;
   justify-content: space-between;
   padding: 1rem;
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid var(--border);
 }
 
 .headerInfo {
@@ -87,14 +124,14 @@
 .aiIcon {
   width: 24px;
   height: 24px;
-  fill: #007AFF;
+  fill: var(--primary);
 }
 
 .closeButton {
   background: none;
   border: none;
   font-size: 1.5rem;
-  color: #666;
+  color: var(--text);
   cursor: pointer;
   padding: 0.25rem;
 }
@@ -126,7 +163,7 @@
 }
 
 .messageContent {
-  background: #007AFF;
+  background: var(--primary);
   color: white;
   padding: 0.75rem;
   border-radius: 12px;
@@ -164,7 +201,7 @@
 
 .inputContainer {
   padding: 1rem;
-  border-top: 1px solid #eee;
+  border-top: 1px solid var(--border);
   display: flex;
   gap: 0.5rem;
 }
@@ -172,18 +209,18 @@
 .input {
   flex-grow: 1;
   padding: 0.75rem;
-  border: 1px solid #ddd;
+  border: 1px solid var(--border);
   border-radius: 20px;
   outline: none;
   transition: border-color 0.2s;
 }
 
 .input:focus {
-  border-color: #007AFF;
+  border-color: var(--primary);
 }
 
 .sendButton {
-  background: #007AFF;
+  background: var(--primary);
   color: white;
   border: none;
   border-radius: 50%;
