@@ -1,8 +1,6 @@
 import React, { useState } from 'react'
 
 import { DocsThemeConfig } from 'nextra-theme-docs'
-import { LogoWithChat } from './components/LogoWithChat'
-
 
 
 const config: DocsThemeConfig = {
@@ -26,7 +24,7 @@ const config: DocsThemeConfig = {
   //   )
   // },
   logo: (
-    <LogoWithChat />
+    <img src="/icon.png" alt="Kanari Network" style={{ width: '100%' }} />
   ),
   project: {
     link: 'https://github.com/jamesatomc/kanari-docs/',
