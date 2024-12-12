@@ -24,7 +24,12 @@ const config: DocsThemeConfig = {
   //   )
   // },
   logo: (
-    <img src="/icon.png" alt="Kanari Network" style={{ width: '100%' }} />
+    <>
+      <img src="./icon.png" alt="Kanari Network Logo" style={{ width: '40px', height: '40px' }} />
+      <span style={{ marginLeft: '10px', fontSize: '1.2em', fontWeight: 500 }}>
+        Kanari Network Docs
+      </span>
+    </>
   ),
   project: {
     link: 'https://github.com/jamesatomc/kanari-docs/',
