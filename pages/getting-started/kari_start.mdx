@@ -1,0 +1,98 @@
+# Kari Start Command
+
+The `kari start` command initializes a local Kanari node for development.
+
+## Prerequisites
+
+Before using `kari start`, ensure:
+- Kanari CLI is installed
+- A wallet is generated using `kari keytool generate`
+
+## Usage
+
+```bash
+kari start [options]
+```
+
+## Common Errors
+
+### No Wallet Found
+If you see:
+```bash
+No wallet found!
+Please create a wallet first using:
+kari keytool generate
+```
+
+## Wallet Setup
+
+1. Generate a new wallet:
+```bash
+kari keytool generate
+```
+
+2. When prompted, select mnemonic length:
+```bash
+Enter mnemonic length (12 or 24):
+24
+```
+
+Example output:
+```bash
+New address generated:
+Private Key: ec88507a1acf0d10d3386b293c47949d336c766b82181c77dc5aa6a2d501ebc2
+Public Address: 0x954834ae53132e9e3859b52768dacd923ddadb5f48af1c7aebe525cbea545b87
+Seed Phrase: twelve lecture remove oppose ordinary divert elephant range zero bomb field army lens range carpet worth burger decline rice hidden blade fruit upper tape
+```
+
+The wallet file is saved at: `%USERPROFILE%\.kari\wallets\<address>.toml`
+
+## Usage
+
+The `kari start` command initializes a local Kanari node for development.
+
+## Network Configuration
+
+When running `kari start`, you'll be prompted to configure your network:
+
+```bash
+kari start
+
+Choose a network type:
+1. devnet
+2. testnet
+3. mainnet
+Enter your choice [1-3]:
+```
+
+Configuration options:
+- Network type (1 devnet) Enter
+- RPC port (default: 3031) Enter
+- Network domain (default: devnet.kanari.network) Enter
+
+## Initialization Output
+
+```bash
+Network configuration saved successfully.
+No blockchain data found, initializing new chain
+Setting miner address to existing wallet: 0x954834ae53132e9e3859b52768dacd923ddadb5f48af1c7aebe525cbea545b87
+```
+
+## Network Status
+
+The node provides real-time status:
+```bash
+RPC server running on http://127.0.0.1:3031
+Accessible via https://devnet.kanari.network
+
+[INFO] block=2 | hash=6c748a55... | prev=5a0e62fe... | miner=0t | reward=25t
+[STAT] blocks=2 supply=50
+```
+
+## Quick Reference
+
+- Default RPC endpoint: `http://127.0.0.1:3031`
+- Press Enter to stop the node
+- Wallet address automatically used for mining
+```
+```
