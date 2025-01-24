@@ -1,6 +1,7 @@
 {
   "index": "Introduction",
   "getting-started": "Getting Started",
+  "kari-command": "Kari Command",
   "about": {
     "title": "About",
     "type": "page"

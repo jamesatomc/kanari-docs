@@ -1,7 +1,4 @@
 {
     "installation": "Installation",
-    "setup": "Setup",
-    "kari_start": "Kari Start",
-    "kari_keytool": "Kari Keytool",
-    "kari_move": "Kari Move"
+    "setup": "Setup"
 }
