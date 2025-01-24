@@ -10,7 +10,7 @@ const config: DocsThemeConfig = {
       additionalLinkTags: [
         {
           rel: 'icon',
-          href: '../icon.png',
+          href: 'https://kanari.network/kariicon1.png',
         },
       ],
     }
@@ -25,7 +25,7 @@ const config: DocsThemeConfig = {
   // },
   logo: (
     <>
-      <img src="./icon.png" alt="Kanari Network Logo" style={{ width: '40px', height: '40px' }} />
+      <img src="https://kanari.network/kariicon1.png" alt="Kanari Network Logo" style={{ width: '40px', height: '40px' }} />
       <span style={{ marginLeft: '10px', fontSize: '1.2em', fontWeight: 500 }}>
         Kanari Network Docs
       </span>
