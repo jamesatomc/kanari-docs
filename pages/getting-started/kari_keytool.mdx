@@ -1,0 +1,65 @@
+# Kari Keytool Command
+
+The `kari keytool` command provides wallet management functionality for the Kari blockchain.
+
+## Usage
+```bash
+kari keytool <command> [options]
+```
+
+## Available Commands
+
+1. **generate** - Create a new wallet address
+```bash 
+kari keytool generate
+# Prompts for mnemonic length (12 or 24 words)
+# Generates and displays:
+# - Private key
+# - Public address
+# - Seed phrase
+```
+
+2. **balance** - Check wallet balance 
+```bash
+kari keytool balance
+# Prompts for public address
+# Displays current balance
+```
+
+3. **select** - Choose active wallet
+```bash
+kari keytool select
+# Lists available wallets
+# Allows selecting one as active
+```
+
+4. **wallet** - Load existing wallet details
+```bash
+kari keytool wallet
+# Prompts for public address
+# Shows wallet information if found
+```
+
+5. **send** - Transfer coins
+```bash
+kari keytool send
+# Prompts for:
+# - Sender address
+# - Receiver address  
+# - Amount to send
+```
+
+6. **list** - Show all wallets
+```bash
+kari keytool list
+# Displays all wallet files with selection status
+```
+
+## Notes
+
+- Wallet files are stored in `~/.kari/wallets/` directory
+- Each wallet file is named with its public address
+- Selected wallet is used for mining/transactions
+- Private keys and seed phrases should be kept secure
+
+The tool provides essential wallet operations like address generation, balance checking, coin transfers and wallet selection for interacting with the Kari blockchain.
